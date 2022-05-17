@@ -28,6 +28,29 @@ class ArticlesController extends Controller
 
     } //end method
 
+    public function store(Request $request)
+    {
+        $article = new Article;
+        $article->title = $request->title;
+        $article->description = $request->description;
+
+        $success = $article->save();
+        if(!$success)
+        {
+            return response()->json('Error Saving', 500);
+        }else {
+            return response()->json('Success', 200);
+        }
+
+
+    } //end method
+
+
+
+
+
+
+
 
 
 
