@@ -12,9 +12,25 @@ class ArticlesController extends Controller
     {
         $article = Article::all();
         return response()->json($article, 200);
-        
+
+    } // end method
+
+    public function show($id)
+    {
+        $article = Article::find($id);
+
+        if(is_null($article))
+        {
+            return response()->json("Article not found");
+        }else {
+            return response()->json($article, 200);
+        }
+
+    } //end method
 
 
 
-    }
+
+
+
 }
