@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\api\ArticlesController;
+use App\Http\Controllers\APi\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/articles', [ArticlesController::class, 'index']);
+Route::get('articles', [ArticlesController::class, 'index']);

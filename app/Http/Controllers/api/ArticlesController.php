@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 
 class ArticlesController extends Controller
 {
@@ -12,16 +12,9 @@ class ArticlesController extends Controller
     {
         $article = Article::all();
         return response()->json($article, 200);
+        
+
 
 
     }
-
-
-
-
-
-
-
-
-
 }
